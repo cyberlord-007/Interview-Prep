@@ -10,7 +10,7 @@ typedef long long int ll;
 #define M 1000000007
 
 int main()
-{
+{ 
     int i, j, n, x;
     cin >> n;
     int arr[n];
