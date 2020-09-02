@@ -36,6 +36,9 @@ void sortedIns(Node *head, int val)
     {
         head = temp;
     }
+    if(val<head->key){
+        temp->next = head;
+    }
     while (nxt->next != NULL && curr->next->next != NULL)
     {
         if (val >= curr->key && val <= nxt->key)
