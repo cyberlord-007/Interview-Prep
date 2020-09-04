@@ -7,8 +7,22 @@ typedef long long int ll;
 #define dec(x,y)  fixed<<setprecision(y)<<x
 #define M  1000000007
 
+int main() 
+{ 
+	ios_base::sync_with_stdio(false);cin.tie(NULL); 
 
-vector<int> majority(ll *nums,ll n){
+	#ifndef ONLINE_JUDGE 
+		freopen("input.txt", "r", stdin); 
+		freopen("error.txt", "w", stderr); 
+		freopen("output.txt", "w", stdout); 
+	#endif 
+
+	w(t){
+		ll n;
+		cin>>n;
+		ll nums[n];
+		for(int i=0;i<n;i++)
+			cin>>nums[i];
 		ll cand1=-1,c1=0;
 		ll cand2=-1,c2=0;
 		vector<int> v;
@@ -39,28 +53,10 @@ vector<int> majority(ll *nums,ll n){
             v.push_back(cand1);
         if(c2>(n/3))
             v.push_back(cand2);
-        return v;
-}
-
-int main() 
-{ 
-	ios_base::sync_with_stdio(false);cin.tie(NULL); 
-
-	#ifndef ONLINE_JUDGE 
-		freopen("input.txt", "r", stdin); 
-		freopen("error.txt", "w", stderr); 
-		freopen("output.txt", "w", stdout); 
-	#endif 
-
-	w(t){
-		ll n;
-		cin>>n;
-		ll nums[n];
-		for(int i=0;i<n;i++)
-			cin>>nums[i];
-		std::vector<int> res = majority(nums,n);
-		for(auto i=res.begin();i!=res.end();i++)
-		cout<<*i<<" ";		
+		for(int i=0;i<v.size();i++){
+			cout<<v[i]<<" ";
+		}
+		
 	}
 
 
